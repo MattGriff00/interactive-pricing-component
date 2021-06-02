@@ -5,12 +5,23 @@
 }
 
 body {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.background {
+  background-image: url("https://svgshare.com/i/Xme.svg");
+  height: 50vh;
+  width: 100%;
+  position: absolute;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-position: left;
+  bottom: 50%;
 }
 
 .card {
@@ -21,16 +32,21 @@ body {
 }
 
 .wrapper {
-  width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  height: 100vh;
 }
 
 .heading {
+  width: 150px;
+  height: 150px;
   margin: 20px;
+  background-image: url(https://svgshare.com/i/XnB.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1 {
@@ -53,6 +69,9 @@ p {
   margin: 25px;
   text-align: center;
   width: 325px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .heading-buttom {
@@ -307,6 +326,10 @@ button {
     margin: 20px 0;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+
+  .body {
+    align-items: flex-start;
   }
 
   #first {
