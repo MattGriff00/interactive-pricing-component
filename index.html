@@ -1,39 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="stylesheet" href="interactive-pricing.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+  <body>
+    <div class="wrapper">
+      <div class="heading">
+        <h1>Simple, traffic-based pricing</h1>
+        <div class="heading-buttom">
+          <h2>Sign-up for our 30-day trial.</h2>
+          <h2>No credit card required.</h2>
+        </div>
+      </div>
 
-  Pageviews
-  $ /month
+      <div class="card">
+        <div class="top">
+          <div class="top-info">
+            <p><span id="demo"></span>K PAGEVIEWS</p>
+          </div>
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              step="10"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <div id="first">
+            <h1>$<span id="annual"></span></h1>
+            <p>/ year</p>
+          </div>
+          <div id="second">
+            <h1>$<span id="monthly"></span></h1>
+            <p>/ month</p>
+          </div>
+        </div>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+        <div class="monthly-toggle">
+          <div>
+            <p>Monthly Billing</p>
+          </div>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+          <label class="switch">
+            <input type="checkbox" onclick="myFunction()" />
+            <span class="slider1 round"></span>
+          </label>
+          <div class="monthly-toggle-left">
+            <p>Yearly Billing</p>
+            <p id="red-content">-25%</p>
+            <p id="red-content-2">25% Discount</p>
+          </div>
+        </div>
+        <hr />
 
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div class="body-wrapper">
+          <div class="body">
+            <div class="body-item">
+              <img src="https://svgshare.com/i/Xn7.svg" />
+              <p>Unlimited websites</p>
+            </div>
+            <div class="body-item">
+              <img src="https://svgshare.com/i/Xn7.svg" />
+              <p>100% data ownership</p>
+            </div>
+            <div class="body-item">
+              <img src="https://svgshare.com/i/Xn7.svg" />
+              <p>Email reports</p>
+            </div>
+          </div>
+
+          <div class="buttom-btn">
+            <button>Start my trial</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    var annualprice = document.getElementById("annual");
+    var monthlyprice = document.getElementById("monthly");
+
+    var totalmonthlyprice = document.getElementById("first");
+    var totalannualprice = document.getElementById("second");
+
+    output.innerHTML = slider.value;
+    monthlyprice.innerHTML = slider.value * 10;
+    annualprice.innerHTML = slider.value * 7.5;
+
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+      total = this.value * 10;
+      annualprice.innerHTML = total * 0.75;
+      monthlyprice.innerHTML = total;
+    };
+
+    function myFunction() {
+      var totalmonthlyprice = document.getElementById("first");
+      var totalannualprice = document.getElementById("second");
+
+      if (totalannualprice.style.display === "none") {
+        totalannualprice.style.display = "flex";
+        totalmonthlyprice.style.display = "none";
+      } else {
+        totalannualprice.style.display = "none";
+        totalmonthlyprice.style.display = "flex";
+      }
+    }
+  </script>
 </html>

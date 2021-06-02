@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  width: 325px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.heading {
+  margin: 20px;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+}
+
+/*-------------------------The Heading -------------------------------------*/
+.heading {
+  margin: 25px;
+  text-align: center;
+  width: 325px;
+}
+
+.heading-buttom {
+  padding-top: 10px;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+}
+
+/*----------------------The Slider----------------------------------------*/
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.top-info {
+  order: 1;
+}
+
+.slidecontainer {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  order: 2;
+}
+
+.slider {
+  appearance: none;
+  width: 90%; /* Full-width */
+  margin: 0 auto;
+  height: 10px;
+  border-radius: 15px;
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  height: 25px;
+  border-radius: 50%;
+  /*background: url("https://svgshare.com/i/Xmk.svg");*/
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  height: 25px;
+  border-radius: 50%;
+  /* background: url("https://svgshare.com/i/Xmk.svg");*/
+}
+
+#first {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  order: 3;
+}
+
+#second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 3;
+}
+
+/*----------------------------The Switch--------------------------------*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider1 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider1:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider1 {
+  background-color: #2196f3;
+}
+
+input:focus + .slider1 {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider1:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider1.round {
+  border-radius: 34px;
+}
+
+.slider1.round:before {
+  border-radius: 50%;
+}
+
+/*-------------------------------Content In Body---------------------------*/
+
+.monthly-toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#red-content {
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+#red-content-2 {
+  display: none;
+}
+
+.monthly-toggle-left {
+  display: flex;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.body-item {
+  display: flex;
+}
+
+img {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+}
+
+/*------------------------------Button at the buttom--------------------*/
+
+.buttom-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+button {
+  background-color: hsl(227, 35%, 25%);
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+/*-------------------------------------Media Query-----------------------*/
+
+@media screen and (min-width: 650px) {
+  .card {
+    width: 650px;
+  }
+  .body-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #red-content {
+    display: none;
+  }
+
+  #red-content-2 {
+    display: block;
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
+    border-radius: 8px;
+    margin-left: 10px;
+  }
+
+  .heading {
+    margin: 25px;
+    text-align: center;
+    width: 650px;
+  }
+
+  h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: 40px;
+  }
+
+  h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #first {
+    order: 2;
+  }
+
+  #second {
+    order: 2;
+  }
+
+  .slidecontainer {
+    order: 3;
+  }
+}
